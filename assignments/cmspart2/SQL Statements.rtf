@@ -1,0 +1,149 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh14100\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 SQL Tables\
+acsc_main_page\
+ascs_user\
+ascs_about\
+ascs_support\
+ascs_contact\
+\
+SQL Statements\
+\
+// MAIN PAGE\
+\
+CREATE TABLE acsc_main_page (\
+id int NOT NULL AUTO_INCREMENT,\
+content TEXT,\
+PRIMARY KEY (id));\
+\
+INSERT INTO acsc_main_page (content)\
+VALUES ('Hello, and welcome to Apple Solutions for Christian Schools. Here at ASCS, it is our goal to provide Christian schools with the tools and resources to provide a quality education to their students.\'94);\
+\
+// LOGIN PAGE\
+\
+CREATE TABLE ascs_user (\
+id int NOT NULL AUTO_INCREMENT,\
+fname varchar(255),\
+lname varchar(255),\
+username varchar(255),\
+email varchar(255),\
+password varchar(255),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_user (fname, lname, username, email, password)\
+VALUES ('Admin', 'Admin', 'admin', 'admin@owencsis410.com', 'admin'), ('Publisher', 'Publisher', 'publisher', 'publisher@owencsis410.com', 'publisher'), ('Customer', 'Customer', 'customer', 'customer@owencsis410.com', 'customer');\
+\
+// ABOUT PAGE\
+\
+CREATE TABLE ascs_about (\
+id int NOT NULL AUTO_INCREMENT,\
+entry TEXT,\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_about (entry)\
+VALUES \
+(\'93<p>In 1963, Christian Book Source began to provide Christian schools access to affordable and quality teaching materials. Due to the economy and the changing needs of Christian schools, Christian Book Source's name was changed to Apple Solutions for Christian Schools in 2008 and became the leader of sourcing schools with Apple equipment and software solutions to enhance learning and knowledge.</p>\'94), \
+(\'93<h2>The Scriptures</h2><p>The Holy Bible was written by men divinely inspired and is God's revelation of Himself to man. It is a perfect treasure of divine instruction. It has God for its author, salvation for its end, and truth, without any mixture of error, for its matter. Therefore, all Scripture is totally true and trustworthy. It reveals the principles by which God judges us, and therefore is, and will remain to the end of the world the true center of Christian union, and the supreme standard by which all human conduct, creeds, and religious opinions should be tried. All Scripture is a testimony to Christ, who is Himself the focus of divine revelation.</p><h2>God</h2><p>There is one and only one living and true God. The eternal triune God reveals Himself to us as Father, Son and Holy Spirit, with distinct personal attributes, but without division of nature, essence, or being.</p><h2>Man</h2><p>Man is the special creation of God, in His own image. He created them male and female as the crowning work of His creation. \'85By his free choice man sinned against God and brought sin into the human race. \'85 The sacredness of human personality is evident in that God created man in His own image, and in that Christ died for man; therefore every person of every race possesses dignity and is worthy of respect and Christian love.</p><h2>Salvation</h2><p>Salvation involves the redemption of the whole man, and is offered freely to all who accept Jesus Christ as Lord and Saviour, who by His own blood obtained eternal redemption for the believer. In its broadest sense salvation includes regeneration, justification, sanctification, and glorification.</p><h2>The Church</h2><p>A New Testament church of the Lord Jesus Christ is an autonomous local congregation of baptized believers, associated by covenant in the faith and fellowship of the gospel, observing the two ordinances of Christ, governed by His laws, exercising the gifts, rights, and privileges invested in them by His Word, and seeking to extend the gospel to the ends of the earth. Each congregation operates under the Lordship of Christ through democratic processes. In such a congregation each member is responsible and accountable to Christ as Lord. Its scriptural officers are pastors and deacons. While both men and women are gifted for service in the church, the office of pastor is limited to men as qualified by Scripture.</p>\'94),\
+(\'93<h2>When was ASCS Started?</h2><p>ASCS originally started in 1963 as Christian Book Source and was later renamed in 2008.</p><h2>What is ASCS?</h2><p>ASCS is an organization that provides quality tools and equipment to Christian schools to further education and assist in providing a Godly education.</p><h2>Are there discounts when purchasing from ASCS?</h2><p>Yes, our items are discounted at the Apple education rate. We also provide discounts for volume orders.</p><h2>Is purchasing from ASCS secure?</h2><p>Yes, we provided standard e-commerce encryption and protect your financial information in secure databases.</p><h2>Is there a cost for shipping?</h2><p>We believe in saving as much money as we can for our customers. All items, no matter how large or small, are shipped free of charge.</p><h2>What about tax?</h2><p>Due to the nature of our business and being an online retailer, purchases made from our website are tax-exempt, saving you even more money.</p>\'94);\
+\
+// SUPPORT\
+\
+CREATE TABLE ascs_support (\
+id int AUTO_INCREMENT,\
+date DATE,\
+fname TEXT,\
+lname TEXT,\
+email TEXT,\
+issue TEXT,\
+PRIMARY KEY (id));\
+\
+// CONTACT\
+\
+CREATE TABLE ascs_contact (\
+id int AUTO_INCREMENT,\
+date DATE,\
+fname TEXT,\
+lname TEXT,\
+email TEXT,\
+comment TEXT,\
+PRIMARY KEY (id));\
+\
+// CART\
+\
+CREATE TABLE ascs_cart (\
+id int AUTO_INCREMENT,\
+name TEXT,\
+price DECIMAL(10,2),\
+qty int,\
+PRIMARY KEY (id));\
+\
+// IMAC PAGE\
+\
+CREATE TABLE ascs_imacs (\
+id int AUTO_INCREMENT,\
+name TEXT,\
+screensize DECIMAL(3,1),\
+processor DECIMAL(2,1),\
+harddrive INT,\
+ram INT,\
+price DECIMAL (10,2),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_imacs (name, screensize, processor, harddrive, ram, price) VALUES (\'92iMac\'92,21.5, 2.3, 1, 8, 999.00), (\'92iMac\'92,21.5, 3.0, 1, 8, 1199.00), (\'92iMac\'92,27, 3.4, 1, 16, 1649.00);\
+\
+// Mac MINI PAGE\
+\
+CREATE TABLE ascs_macminis(\
+id int AUTO_INCREMENT,\
+name 	TEXT,\
+processor DECIMAL(3,1),\
+harddrive INT,\
+ram INT,\
+price DECIMAL(10,2),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_macminis (name, processor, harddrive, ram, price) VALUES (\'91Mac Mini, 1.4, 500, 4, 449.00), (\'91Mac Mini, 2.6, 1, 8, 649.00);\
+\
+// MACBOOK PRO PAGE\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 CREATE TABLE ascs_macbookpros (\
+id int AUTO_INCREMENT,\
+name TEXT,\
+screensize DECIMAL(3,1),\
+processor DECIMAL(2,1),\
+harddrive INT,\
+ram INT,\
+price DECIMAL (10,2),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_macbookpros (name, screensize, processor, harddrive, ram, price) VALUES (\'91MacBook Pro\'92, 13, 2.3, 128, 8, 1249.00), (\'91MacBook Pro\'92, 13, 2.5, 256, 16, 1549.00), (\'91MacBook Pro\'92, 15.4, 2.9, 256, 16, 2349.00); \
+\
+// IPAD AIR\
+CREATE TABLE ascs_ipadairs (\
+id INT AUTO_INCREMENT,\
+name TEXT,\
+color TEXT,\
+size INT,\
+price DECIMAL (10,2),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_ipadairs (name, color, size, price) VALUES (\'91iPad Air\'92, \'91Silver\'92, 32, 299.00), (\'91iPad Air\'92, \'91Silver\'92, 128, 399.00), (\'91iPad Air\'92, \'91Space Gray\'92, 32, 299.00), (\'91iPad Air\'92, \'91Space Gray\'92, 128, 399);\
+\
+// IPAD PRO\
+CREATE TABLE ascs_ipadpros (\
+id INT AUTO_INCREMENT,\
+name TEXT,\
+screensize DECIMAL(3,1),\
+color TEXT,\
+size INT,\
+price DECIMAL (10,2),\
+PRIMARY KEY (id));\
+\
+INSERT INTO ascs_ipadpros (name, screensize, color, size, price) VALUES (\'91iPad Pro\'92, 10.5, \'91Silver\'92, 256, 749.00), (\'91iPad Pro\'92, 10.5, \'91Space Gray\'92, 256, 749.00), (\'91iPad Pro\'92, 12.9, \'91Silver\'92, 256, 849.00), (\'91iPad Pro\'92, 12.9, \'91Space Gray\'92, 256, 849.00);\
+}
